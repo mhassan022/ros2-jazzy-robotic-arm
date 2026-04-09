@@ -13,3 +13,11 @@ The project includes a robotic arm built using ROS2 Jazzy with URDF modeling, si
 
 ## Package
 - Adel_Arm
+
+## 🎥 Demo
+
+### 🟢 Simulation
+[▶️ Watch Simulation](media/simulation.mp4)
+
+### 🔴 Hardware
+[▶️ Watch Hardware](media/hardware.mp4)
