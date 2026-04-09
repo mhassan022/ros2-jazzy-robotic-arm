@@ -1,0 +1,89 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    arm_group_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    hand_group_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+# ---------------------------------------------------
+# ARM CONTROLLER  –  NO MORE TOLERANCE ERRORS
+# ---------------------------------------------------
+arm_group_controller:
+  ros__parameters:
+    joints:
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    allow_nonzero_velocity_at_trajectory_end: true
+    allow_partial_joints_goal: false
+    open_loop_control: true
+
+    # SUPER SAFE TOLERANCES
+    constraints:
+      stopped_velocity_tolerance: 0.05
+      goal_time: 1.0          # more relaxed timing
+      goal: 0.5               # global goal tolerance
+      trajectory: 0.5         # global trajectory tolerance
+
+      joint1:
+        trajectory: 0.5
+        goal: 0.3
+      joint2:
+        trajectory: 0.5
+        goal: 0.3
+      joint3:
+        trajectory: 0.5
+        goal: 0.3
+      joint4:
+        trajectory: 0.5
+        goal: 0.3
+      joint5:
+        trajectory: 0.5
+        goal: 0.3
+
+
+# ---------------------------------------------------
+# 2-DOF GRIPPER CONTROLLER
+# ---------------------------------------------------
+hand_group_controller:
+  ros__parameters:
+    joints:
+      - left_joint
+      - right_joint
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    allow_nonzero_velocity_at_trajectory_end: true
+
+    # SAFE LIMITS FOR FINGERS TOO
+    constraints:
+      stopped_velocity_tolerance: 0.05
+      goal_time: 0.5
+      goal: 0.3
+      trajectory: 0.3
+
+    gains:
+      left_joint:  {p: 500.0, i: 10.0, d: 10.0}
+      right_joint: {p: 500.0, i: 10.0, d: 10.0}

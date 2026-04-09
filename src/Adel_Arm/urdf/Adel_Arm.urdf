@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Adel_Arm">
+
+  <!-- WORLD LINK -->
+  <link name="world"/>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0303994462788918 0.0505781154463316 0.080226794873787"
+        rpy="0 0 0" />
+      <mass
+        value="0.093991528357274" />
+      <inertia
+        ixx="0.000114117470960472"
+        ixy="-1.35284302533612E-06"
+        ixz="-1.97704377134869E-13"
+        iyy="0.000197768588984219"
+        iyz="-1.91153633074789E-13"
+        izz="0.000124427257958152" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- FIXED JOINT FROM WORLD TO BASE -->
+  <joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-0.00705756789603889 0.0194229347811668 1.03814223523235E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0897213187915253" />
+      <inertia
+        ixx="7.72728720700263E-05"
+        ixy="7.96790903926848E-06"
+        ixz="2.77140502363702E-10"
+        iyy="7.06954475493946E-05"
+        iyz="-6.66096705105475E-11"
+        izz="6.69370927398784E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0.02951 -0.080227 0.078152"
+      rpy="1.5708 0 0.60583" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="3.142"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0.0700036426482495 0.010308455200094 -3.22313703240984E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.137984759390326" />
+      <inertia
+        ixx="3.08351216323563E-05"
+        ixy="-3.37200404018867E-09"
+        ixz="-7.276347926542E-12"
+        iyy="0.000431683461719295"
+        iyz="3.54543504038803E-10"
+        izz="0.000412927569648161" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.04355 0"
+      rpy="3.1416 -0.20525 1.5708" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.7855"
+      upper="1.571"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="llink3">
+    <inertial>
+      <origin
+        xyz="-0.0316988434182598 0.0105787036842044 -0.000100265375810232"
+        rpy="0 0 0" />
+      <mass
+        value="0.0803355000017766" />
+      <inertia
+        ixx="2.12574661181931E-05"
+        ixy="8.16810709257307E-07"
+        ixz="-2.54143813425501E-07"
+        iyy="0.000117226394589393"
+        iyz="1.02194566545309E-08"
+        izz="0.000104519672623578" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/llink3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/llink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0.14 -0.0025 0"
+      rpy="3.1416 0.84901 0" />
+    <parent
+      link="link2" />
+    <child
+      link="llink3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.3565"
+      upper="0.7885"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="3.83154176837874E-05 -0.00410290324686761 0.0184504303408905"
+        rpy="0 0 0" />
+      <mass
+        value="0.0204480990408153" />
+      <inertia
+        ixx="5.09533113465716E-06"
+        ixy="-2.97147750938761E-09"
+        ixz="1.13778571826161E-08"
+        iyy="6.07398413235396E-06"
+        iyz="3.91779066577792E-07"
+        izz="2.96118819819566E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="-0.1057 0.012024 0"
+      rpy="1.5708 -1.5366 -1.5708" />
+    <parent
+      link="llink3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.571"
+      upper="3.142"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="0.0244850967603842 0.00479249324455749 -0.00160454356355314"
+        rpy="0 0 0" />
+      <mass
+        value="0.0155760948868595" />
+      <inertia
+        ixx="2.58422861031613E-06"
+        ixy="-8.30850004392214E-07"
+        ixz="5.46126859175179E-07"
+        iyy="6.24791796599796E-06"
+        iyz="1.0012678624631E-08"
+        izz="4.8787284090181E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0 -0.01685 0.0284"
+      rpy="-1.5708 -1.0269 -3.1416" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.500"
+      upper="0.9200"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="lg_l">
+    <inertial>
+      <origin
+        xyz="-0.00452759137056248 0.00100000000000283 -0.000601969307288133"
+        rpy="0 0 0" />
+      <mass
+        value="0.00396241992694461" />
+      <inertia
+        ixx="1.41673200682029E-07"
+        ixy="-2.93649117456325E-23"
+        ixz="-1.38861127331737E-08"
+        iyy="6.7085950123995E-07"
+        iyz="6.86559908419013E-23"
+        izz="5.52960820119589E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/lg_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/lg_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lg_j"
+    type="fixed">
+    <origin
+      xyz="0.034 0.014135 0.020315"
+      rpy="0 -1.1853 0" />
+    <parent
+      link="link5" />
+    <child
+      link="lg_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="3.142"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="left_link">
+    <inertial>
+      <origin
+        xyz="0.0042500225887222 0.00951314755004982 -0.0318899864427387"
+        rpy="0 0 0" />
+      <mass
+        value="0.00539747369583149" />
+      <inertia
+        ixx="1.71391446569207E-06"
+        ixy="1.24927129733653E-11"
+        ixz="6.5136389395895E-12"
+        iyy="1.59582802404429E-06"
+        iyz="3.73412637916886E-07"
+        izz="1.83080983061252E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint"
+    type="revolute">
+    <origin
+      xyz="0.015564 -0.002 0.004919"
+      rpy="0.016065 0 -1.5708" />
+    <parent
+      link="lg_l" />
+    <child
+      link="left_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.4500"
+      upper="0"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="rg_l">
+    <inertial>
+      <origin
+        xyz="-0.0173705467507506 0.00174371793235742 0.000402310233194512"
+        rpy="0 0 0" />
+      <mass
+        value="0.0028244899707033" />
+      <inertia
+        ixx="1.02499986489243E-07"
+        ixy="-1.29356129819058E-08"
+        ixz="5.89223408171055E-08"
+        iyy="5.41413331326968E-07"
+        iyz="2.10405683138336E-09"
+        izz="4.49934909634666E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/rg_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/rg_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rg_j"
+    type="fixed">
+    <origin
+      xyz="0.025192 0.014485 -0.0071714"
+      rpy="3.1416 -1.0524 3.1416" />
+    <parent
+      link="link5" />
+    <child
+      link="rg_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.4500"
+      upper="0"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="right_link">
+    <inertial>
+      <origin
+        xyz="0.00425002259158649 0.00951314719595914 -0.0318899808571203"
+        rpy="0 0 0" />
+      <mass
+        value="0.00539747163761644" />
+      <inertia
+        ixx="1.71391326599456E-06"
+        ixy="1.24466473072753E-11"
+        ixz="6.51477168104624E-12"
+        iyy="1.59582831935246E-06"
+        iyz="3.73411884648562E-07"
+        izz="1.83079472927151E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ahmed-adel/robot_ws/src/Adel_Arm/meshes/right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint"
+    type="revolute">
+    <origin
+      xyz="-0.035069 -0.01085 0.0084279"
+      rpy="0.11121 0 1.5708" />
+    <parent
+      link="rg_l" />
+    <child
+      link="right_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.4500"
+      upper="0"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <!-- ROS2 CONTROL -->
+  <ros2_control name="RobotSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+    <joint name="joint1">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity"><param name="initial_value">0</param></state_interface>
+    </joint>
+
+    <joint name="joint2">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity"><param name="initial_value">0</param></state_interface>
+    </joint>
+
+    <joint name="joint3">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity"><param name="initial_value">0</param></state_interface>
+    </joint>
+
+    <joint name="joint4">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity"><param name="initial_value">0</param></state_interface>
+    </joint>
+
+    <joint name="joint5">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity"><param name="initial_value">0</param></state_interface>
+    </joint>
+
+    <joint name="right_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity"><param name="initial_value">0</param></state_interface>
+    </joint>
+
+    <joint name="left_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity"><param name="initial_value">0</param></state_interface>
+    </joint>
+   
+  </ros2_control>
+
+  <!-- GAZEBO PLUGIN -->
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>/home/ahmed-adel/robot_ws/install/Adel_Arm/share/Adel_Arm/config/joint_controller.yaml</parameters>
+    </plugin>
+  </gazebo>
+</robot>   

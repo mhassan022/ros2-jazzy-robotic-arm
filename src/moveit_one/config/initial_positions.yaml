@@ -1,0 +1,10 @@
+# Default initial positions for Adel_Arm's ros2_control fake system
+
+initial_positions:
+  joint1: 0.0
+  joint2: 0.0
+  joint3: 0.0
+  joint4: 0.0
+  joint5: 0.0
+  left_joint: 0.0
+  right_joint: 0.0

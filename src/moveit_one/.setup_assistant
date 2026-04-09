@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: Adel_Arm
+    relative_path: urdf/Adel_Arm.urdf
+  srdf:
+    relative_path: config/Adel_Arm.srdf
+  package_settings:
+    author_name: adel
+    author_email: ahmed-adel@todo.todo
+    generated_timestamp: 1765254743
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
